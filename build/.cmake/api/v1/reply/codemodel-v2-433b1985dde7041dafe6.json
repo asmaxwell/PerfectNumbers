@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "PerfectNumbers",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -38,8 +40,15 @@
 			[
 				{
 					"directoryIndex" : 0,
+					"id" : "PerfectNumber::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PerfectNumber-Debug-81b608014f63f71932b6.json",
+					"name" : "PerfectNumber",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "PerfectNumbers::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PerfectNumbers-Debug-f011a7e98785c0b31bc2.json",
+					"jsonFile" : "target-PerfectNumbers-Debug-e6bd05dab51e94361f44.json",
 					"name" : "PerfectNumbers",
 					"projectIndex" : 0
 				}

@@ -41,13 +41,44 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/andy/Dropbox/Code/c++/PerfectNumbers/build/
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target PerfectNumber
+
+
+#############################################
+# Order-only phony target for PerfectNumber
+
+build cmake_object_order_depends_target_PerfectNumber: phony || CMakeFiles/PerfectNumber.dir
+
+build CMakeFiles/PerfectNumber.dir/PerfectNumber.cpp.o: CXX_COMPILER__PerfectNumber_Debug /home/andy/Dropbox/Code/c++/PerfectNumbers/PerfectNumber.cpp || cmake_object_order_depends_target_PerfectNumber
+  DEP_FILE = CMakeFiles/PerfectNumber.dir/PerfectNumber.cpp.o.d
+  FLAGS = -g -std=c++14
+  OBJECT_DIR = CMakeFiles/PerfectNumber.dir
+  OBJECT_FILE_DIR = CMakeFiles/PerfectNumber.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target PerfectNumber
+
+
+#############################################
+# Link the static library libPerfectNumber.a
+
+build libPerfectNumber.a: CXX_STATIC_LIBRARY_LINKER__PerfectNumber_Debug CMakeFiles/PerfectNumber.dir/PerfectNumber.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles/PerfectNumber.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = libPerfectNumber.a
+  TARGET_PDB = PerfectNumber.a.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target PerfectNumbers
 
 
 #############################################
 # Order-only phony target for PerfectNumbers
 
-build cmake_object_order_depends_target_PerfectNumbers: phony || CMakeFiles/PerfectNumbers.dir
+build cmake_object_order_depends_target_PerfectNumbers: phony || cmake_object_order_depends_target_PerfectNumber
 
 build CMakeFiles/PerfectNumbers.dir/main.cpp.o: CXX_COMPILER__PerfectNumbers_Debug /home/andy/Dropbox/Code/c++/PerfectNumbers/main.cpp || cmake_object_order_depends_target_PerfectNumbers
   DEP_FILE = CMakeFiles/PerfectNumbers.dir/main.cpp.o.d
@@ -63,9 +94,9 @@ build CMakeFiles/PerfectNumbers.dir/main.cpp.o: CXX_COMPILER__PerfectNumbers_Deb
 #############################################
 # Link the executable PerfectNumbers
 
-build PerfectNumbers: CXX_EXECUTABLE_LINKER__PerfectNumbers_Debug CMakeFiles/PerfectNumbers.dir/main.cpp.o | /usr/local/lib/libCatch2.a
+build PerfectNumbers: CXX_EXECUTABLE_LINKER__PerfectNumbers_Debug CMakeFiles/PerfectNumbers.dir/main.cpp.o | libPerfectNumber.a /usr/local/lib/libCatch2.a || libPerfectNumber.a
   FLAGS = -g
-  LINK_LIBRARIES = /usr/local/lib/libCatch2.a
+  LINK_LIBRARIES = libPerfectNumber.a  /usr/local/lib/libCatch2.a
   OBJECT_DIR = CMakeFiles/PerfectNumbers.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -99,6 +130,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build PerfectNumber: phony libPerfectNumber.a
+
 # =============================================================================
 # Folder targets.
 
@@ -107,7 +140,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/andy/Dropbox/Code/c++/PerfectNumbers/build
 
-build all: phony PerfectNumbers
+build all: phony libPerfectNumber.a PerfectNumbers
 
 # =============================================================================
 # Built-in targets
