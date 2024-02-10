@@ -1,4 +1,0 @@
-/home/andy/Dropbox/Code/c++/PerfectNumbers/build/CMakeFiles/PerfectNumber.dir
-/home/andy/Dropbox/Code/c++/PerfectNumbers/build/CMakeFiles/PerfectNumbers.dir
-/home/andy/Dropbox/Code/c++/PerfectNumbers/build/CMakeFiles/edit_cache.dir
-/home/andy/Dropbox/Code/c++/PerfectNumbers/build/CMakeFiles/rebuild_cache.dir

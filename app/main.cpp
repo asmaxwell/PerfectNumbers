@@ -1,9 +1,7 @@
 #include <iostream>
-#include <catch2/catch_session.hpp>
-#include <catch2/catch_test_macros.hpp>
 #include <chrono>
 
-#include "PerfectNumber.h"
+#include "../src/PerfectNumber.h"
 
 /*
  * Created by Andrew S Maxwell 06/02/2024
@@ -19,11 +17,6 @@ using std::chrono::milliseconds;
 
 int main(int argc, char **argv) {
 
-	// --- Testing suite --- //
-	int result = 0;
-	//uncomment below to run all unit tests
-	// result = Catch::Session().run( argc, argv );
-	// --- Testing End --- //
 
 	PerfectNumber PN;
 	auto t1 = high_resolution_clock::now();
@@ -37,8 +30,5 @@ int main(int argc, char **argv) {
 	
 
 
-	return result;
-}
-
-TEST_CASE( "1: All test cases reside in other .cpp files (empty)", "[multi-file:1]" ) {
+	return 0;
 }

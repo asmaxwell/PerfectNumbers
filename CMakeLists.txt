@@ -7,16 +7,24 @@ LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+#set some more flags!
+set(CMAKE_CXX_FLAGS "-Wall -Wextra -fopenmp")
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
-#For testing include catch2/3
-find_package(Catch2 3 REQUIRED)
-#find_package(OpenMP REQUIRED)
+#support for folders in IDEs
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
+include(FetchContent)
+
+# The compiled library code is here
+add_subdirectory(src)
+# Example main is here
+add_subdirectory(app)
 
 
-add_library(PerfectNumber PerfectNumber.cpp PerfectNumber.h)
 
 
-add_executable(PerfectNumbers main.cpp)
-
-target_link_libraries(PerfectNumbers PRIVATE PerfectNumber Catch2::Catch2 #OpenMP::OpenMP_CXX
-)
+# Add Testing
+include(CTest)
+add_subdirectory(test)
